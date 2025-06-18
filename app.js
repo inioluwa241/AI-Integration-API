@@ -8,13 +8,14 @@ const path = require("path");
 const cors = require("cors");
 
 const express = require("express");
-const e = require("cors");
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+const PORT = process.env.PORT || 3000;
 
 const clientsAi = new OpenAiApi({
   apiKey: process.env.OPEN_API_KEY,
@@ -57,4 +58,6 @@ app.post("/", async (req, res, next) => {
   });
 });
 
-app.listen(3003);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
