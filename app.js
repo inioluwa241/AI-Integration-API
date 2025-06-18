@@ -17,10 +17,6 @@ app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
-const clientsAi = new OpenAiApi({
-  apiKey: process.env.OPEN_API_KEY,
-});
-
 app.post("/", async (req, res, next) => {
   const input = req.body;
   console.log(input.text);
@@ -31,8 +27,7 @@ app.post("/", async (req, res, next) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Bearer pk-YSgUOxvvOzXJWRQVjEGTvFrSnrikMfmkQFrlhDuHhEmHtyZZ",
+        Authorization: `Bearer ${process.env.PAWAN_TOKEN}`,
       },
       body: JSON.stringify({
         model: "cosmosrp",
