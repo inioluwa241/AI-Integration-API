@@ -47,6 +47,7 @@ app.post("/", async (req, res, next) => {
   } else {
     console.log("nothing for you");
   }
+  console.log(preMessage);
   console.log(data.choices[0].message.content);
   const Aireply = data.choices[0].message.content;
   res.status(200).json({
