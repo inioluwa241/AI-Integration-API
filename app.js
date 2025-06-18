@@ -39,7 +39,8 @@ app.post("/", async (req, res, next) => {
     }
   );
   console.log("it is printing");
-
+  console.log(response);
+  console.log(response);
   const data = await response.json();
   const preMessage = await data.choices;
   if (preMessage) {
