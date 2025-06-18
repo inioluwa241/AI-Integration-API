@@ -42,6 +42,7 @@ app.post("/", async (req, res, next) => {
   console.log(response);
   console.log(response);
   const data = await response.json();
+  console.log(data);
   const preMessage = await data.choices;
   if (preMessage) {
     console.log(preMessage[0].message.content);
