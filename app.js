@@ -38,6 +38,7 @@ app.post("/", async (req, res, next) => {
       }),
     }
   );
+  console.log("it is printing");
 
   const data = await response.json();
   const preMessage = await data.choices;
@@ -51,7 +52,10 @@ app.post("/", async (req, res, next) => {
   res.status(200).json({
     AIresponse: Aireply,
   });
+  console.log("it is still printing");
 });
+
+console.log("it is done");
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
